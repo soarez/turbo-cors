@@ -32,6 +32,7 @@ function rand() {
 
 function log(t) {
   $('<p>').append($('<code>').text(t)).appendTo('.log');
+  $('.log').show();
   if ($('.log p').length > 5)
     $('.log p').first().detach();
 }
@@ -40,12 +41,12 @@ function doTurbo() {
   var start = Date.now();
   turboCORSreq({
       method: 'PUT',
-      url: 'http://turbocors.soarez.com/cors/' + rand(),
+      url: 'http://' + rand() + '.turbocors.soarez.com/cors/' + rand(),
       headers: { 'X-Auth-Token': rand() },
       body: 'THIS IS A XHR REQ'
     }, function() {
       var total = (Date.now() - start) / 1000;
-      log('Turbo CORS request completed in: ' + total + 's');
+      log('Turbo CORS request completed in ---- ' + (total + '000').slice(0, 5) + 's');
   });
 }
 
@@ -53,12 +54,12 @@ function doStd() {
   var start = Date.now();
   stdCORSReq({
       method: 'PUT',
-      url: 'http://turbocors.soarez.com/cors/' + rand(),
+      url: 'http://' + rand() + '.turbocors.soarez.com/cors/' + rand(),
       headers: { 'X-Auth-Token': rand() },
       body: 'THIS IS A XHR REQ'
     }, function() {
       var total = (Date.now() - start) / 1000;
-      log('Standard CORS request completed in: ' + total + 's');
+      log('Standard CORS request completed in - ' + (total + '000').slice(0, 5) + 's');
   });
 }
 
