@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Turbo-CORS</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+
+    <style>
+      .log {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 10px;
+        line-height: 0.8em;
+      }
+
+      .log code {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>Turbo CORS</h1>
+      </div>
+        <p class="lead">Because currently CORS sends twice more requests than needed, which makes it slower than alternative cross domain transports &amp; overloads API with pointless payloads.</p>
+        <p>Inspired by <a href="http://homakov.blogspot.pt/2014/01/how-to-use-cors-without-preflights.html">blog post</a> from <a href="https://twitter.com/homakov/status/428370724672110592">@homakov</a></p>
+        <p>The basic idea is to bypass the CORS preflight request by putting the actual method and the extra headers on the <code>Accept</code> header.</p>
+
+        <div class="jumbotron">
+          <p>Test it</p>
+          <button type="button" class="btn btn-default std">
+            <span class="glyphicon glyphicon-transfer"></span>
+            Standard CORS Request
+          </button>
+          <button type="button" class="btn btn-primary turbo">
+            <span class="glyphicon glyphicon-transfer"></span>
+            Turbo CORS Request
+          </button>
+        </div>
+
+        <div class="log"></div>
+    </div>
+
+    <a style="display: block; position: absolute; bottom: 10px; right: 10px;" href="https://twitter.com/igorsoarez">@igorsoarez</a>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
+
