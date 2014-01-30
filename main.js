@@ -46,7 +46,7 @@ function doTurbo() {
       body: 'THIS IS A XHR REQ'
     }, function() {
       var total = (Date.now() - start) / 1000;
-      log('Turbo CORS request completed in ---- ' + (total + '000').slice(0, 5) + 's');
+      log('Turbo CORS request completed in ------ ' + (total + '000').slice(0, 5) + 's');
   });
 }
 
@@ -59,7 +59,7 @@ function doStd() {
       body: 'THIS IS A XHR REQ'
     }, function() {
       var total = (Date.now() - start) / 1000;
-      log('Standard CORS request completed in - ' + (total + '000').slice(0, 5) + 's');
+      log('Standard CORS request completed in --- ' + (total + '000').slice(0, 5) + 's');
   });
 }
 
