@@ -40,7 +40,7 @@ function doTurbo() {
   var start = Date.now();
   turboCORSreq({
       method: 'PUT',
-      url: 'http://127.0.0.1:8000/cors/' + rand(),
+      url: 'http://turbocors.soarez.com/cors/' + rand(),
       headers: { 'X-Auth-Token': rand() },
       body: 'THIS IS A XHR REQ'
     }, function() {
@@ -53,7 +53,7 @@ function doStd() {
   var start = Date.now();
   stdCORSReq({
       method: 'PUT',
-      url: 'http://127.0.0.1:8000/cors/' + rand(),
+      url: 'http://turbocors.soarez.com/cors/' + rand(),
       headers: { 'X-Auth-Token': rand() },
       body: 'THIS IS A XHR REQ'
     }, function() {
